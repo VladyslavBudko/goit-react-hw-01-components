@@ -1,8 +1,6 @@
-// import user from '../JsonData/user.json';
+import PropTypes from 'prop-types';
 
 export default function User(user) {
-  console.log(user);
-  
   const { username, tag, location, avatar, stats } = user;
 
   return (
@@ -31,3 +29,11 @@ export default function User(user) {
     </div>
   );
 }
+
+User.propTypes = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+//   avatar: PropTypes.object,
+  stats: PropTypes.string,
+};

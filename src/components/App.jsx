@@ -1,3 +1,4 @@
+// import PropTypes from 'prop-types';
 import user from './JsonData/user.json';
 import User from './Profile/profile';
 
@@ -6,7 +7,6 @@ export default function App() {
   return User(user);
 }
 
-// App.prototype
 
 // export const App = () => {
 //   return (
