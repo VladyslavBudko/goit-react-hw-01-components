@@ -1,12 +1,20 @@
 // import PropTypes from 'prop-types';
-import user from './JsonData/user.json';
-import User from './Profile/profile';
+import users from './JsonData/user.json';
+import { UserCard } from './Profile/profile';
 
+export const App = () => {
+  return UserCard(users);
+};
 
-export default function App() {
-  return User(user);
-}
-
+// export const App = () => {
+//   return (
+//     <>
+//       {users.map((user, idx) => (
+//         <UserCard key={idx} user={user} />
+//       ))}
+//     </>
+//   );
+// };
 
 // export const App = () => {
 //   return (

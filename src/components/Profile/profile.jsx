@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function User(user) {
+export const UserCard = (user) => {
   const { username, tag, location, avatar, stats } = user;
 
   return (
@@ -30,10 +30,10 @@ export default function User(user) {
   );
 }
 
-User.propTypes = {
+UserCard.propTypes = {
   username: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
 //   avatar: PropTypes.object,
-  stats: PropTypes.string,
+  stats: PropTypes.number,
 };
