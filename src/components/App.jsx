@@ -3,7 +3,15 @@ import users from './JsonData/user.json';
 import { UserCard } from './Profile/profile';
 
 export const App = () => {
-  return UserCard(users);
+  return (
+    <UserCard
+      username={users.username}
+      tag={users.tag}
+      location={users.location}
+      avatar={users.avatar}
+      stats={users.stats}
+    />
+  );
 };
 
 // export const App = () => {
