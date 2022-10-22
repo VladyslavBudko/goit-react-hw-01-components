@@ -30,7 +30,7 @@ export const Profile = props => {
   );
 };
 
-UserCard.propTypes = {
+Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string,
   location: PropTypes.string.isRequired,

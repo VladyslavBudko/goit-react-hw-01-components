@@ -1,9 +1,11 @@
 // import PropTypes from 'prop-types';
 import users from './JsonData/user.json';
 import data from './JsonData/data.json';
+import friends from './JsonData/friends.json';
 
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
+import { FriendsList } from './FriendList/FriendList';
 
 export const App = () => {
   return (
@@ -17,6 +19,7 @@ export const App = () => {
       />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
+      <FriendsList friends={friends} />
     </>
   );
 };
@@ -28,22 +31,5 @@ export const App = () => {
 //         <UserCard key={idx} user={user} />
 //       ))}
 //     </>
-//   );
-// };
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101',
-//       }}
-//     >
-//       React homework template
-//     </div>
 //   );
 // };
