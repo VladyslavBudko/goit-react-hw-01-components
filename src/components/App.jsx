@@ -1,16 +1,23 @@
 // import PropTypes from 'prop-types';
 import users from './JsonData/user.json';
-import { UserCard } from './Profile/profile';
+import data from './JsonData/data.json';
+
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statistics/Statistics';
 
 export const App = () => {
   return (
-    <UserCard
-      username={users.username}
-      tag={users.tag}
-      location={users.location}
-      avatar={users.avatar}
-      stats={users.stats}
-    />
+    <>
+      <Profile
+        username={users.username}
+        tag={users.tag}
+        location={users.location}
+        avatar={users.avatar}
+        stats={users.stats}
+      />
+      <Statistics title="Upload stats" stats={data} />
+      <Statistics stats={data} />
+    </>
   );
 };
 

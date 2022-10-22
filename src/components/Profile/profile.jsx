@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 
-export const UserCard = props => {
+export const Profile = props => {
   const { username, tag, location, avatar, stats } = props;
-//   console.log(props);
-//   console.log(tag);
 
   return (
     <div className="profile">
