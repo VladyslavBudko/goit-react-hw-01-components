@@ -1,11 +1,7 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { Transaction } from 'components/Transaction/Transaction';
 
-export const TransactionHistory = props => {
-  const { type, amount, currency } = props.items[0];
-
-  //   console.log(type);
-  //   console.log(props);
-
+export const TransactionHistory = ({ items }) => {
   return (
     <table className="transaction-history">
       <thead>
@@ -15,19 +11,27 @@ export const TransactionHistory = props => {
           <th>Currency</th>
         </tr>
       </thead>
-
       <tbody>
-        <tr>
-          <td>{type}</td>
-          <td>{amount}</td>
-          <td>{currency}</td>
-        </tr>
-        {/* <tr>
-          <td>Withdrawal</td>
-          <td>85</td>
-          <td>USD</td>
-        </tr> */}
+        {items.map(({ type, amount, currency, id }) => (
+          <Transaction
+            key={id}
+            type={type}
+            amount={amount}
+            currency={currency}
+          />
+        ))}
       </tbody>
     </table>
   );
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ),
 };
