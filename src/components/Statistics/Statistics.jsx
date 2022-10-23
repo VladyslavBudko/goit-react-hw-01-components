@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import { StatisticsList } from '../StatisticsList/StatisticsList';
 
 export const Statistics = ({ title, stats }) => {
-  //   const { title, stats } = props;
   //   console.log(title);
   //   console.log(stats);
-  {
-    if (!title) return;
-  }
+
+  if (!title) return;
 
   return (
     <section className="statistics">
@@ -15,7 +13,7 @@ export const Statistics = ({ title, stats }) => {
 
       <ul className="stat-list">
         {stats.map(prop => {
-          console.log(prop);
+          //   console.log(prop);
           return <StatisticsList key={prop.id} itemStatistics={prop} />;
         })}
       </ul>
@@ -24,6 +22,7 @@ export const Statistics = ({ title, stats }) => {
 };
 
 Statistics.propTypes = {
+  title: PropTypes.string,
   prop: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
