@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const StatisticsList = ({ itemStatistics }) => {
 //   console.log(itemStatistics);
@@ -13,3 +13,8 @@ export const StatisticsList = ({ itemStatistics }) => {
     </div>
   );
 };
+
+StatisticsList.propTypes ={
+label:PropTypes.string.isRequired,
+percentage:PropTypes.string.isRequired,
+}
