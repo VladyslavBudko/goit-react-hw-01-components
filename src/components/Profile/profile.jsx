@@ -1,32 +1,56 @@
 import PropTypes from 'prop-types';
+import {
+  ProfileContainer,
+  ProfileListUl,
+  ProfileItem,
+  ProfileItemContainer,
+  DescriptionContainer,
+  AvatarImg,
+  NameParagraph,
+  TagParagraph,
+  LocationParagraph,
+  StatsList,
+  StatsItem,
+  LabelSpan,
+  QuantitySpan,
+} from 'components/Profile/Profile.styled';
 
 export const Profile = props => {
   const { username, tag, location, avatar, stats } = props;
 
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username} </p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location} </p>
-      </div>
+    <ProfileContainer>
+      <ProfileListUl>
+        <ProfileItem>
+          <ProfileItemContainer>
+            
+            <DescriptionContainer>
+              <AvatarImg src={avatar} alt="User avatar" />
+              <NameParagraph>{username} </NameParagraph>
+              <TagParagraph>@{tag}</TagParagraph>
+              <LocationParagraph>{location} </LocationParagraph>
+            </DescriptionContainer>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes} </span>
-        </li>
-      </ul>
-    </div>
+            <StatsList>
+              <StatsItem>
+                <LabelSpan>Followers</LabelSpan>
+                <QuantitySpan>{stats.followers}</QuantitySpan>
+              </StatsItem>
+
+              <StatsItem>
+                <LabelSpan>Views</LabelSpan>
+                <QuantitySpan>{stats.views}</QuantitySpan>
+              </StatsItem>
+
+              <StatsItem>
+                <LabelSpan>Likes</LabelSpan>
+                <QuantitySpan>{stats.likes} </QuantitySpan>
+              </StatsItem>
+            </StatsList>
+          </ProfileItemContainer>
+        </ProfileItem>
+      </ProfileListUl>
+    </ProfileContainer>
   );
 };
 
