@@ -23,7 +23,6 @@ export const Profile = props => {
       <ProfileListUl>
         <ProfileItem>
           <ProfileItemContainer>
-            
             <DescriptionContainer>
               <AvatarImg src={avatar} alt="User avatar" />
               <NameParagraph>{username} </NameParagraph>
